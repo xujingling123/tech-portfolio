@@ -43,16 +43,23 @@ node scripts/migrate-csdn.mjs --limit=10
 
 ## 部署上线
 
-**推荐 Vercel（免费、自动 HTTPS）：**
+> **国内用户请注意：** `*.vercel.app` 在国内常无法访问，请使用 [DEPLOY-CN.md](./DEPLOY-CN.md) 中的方案。
+
+**推荐 Zeabur（国内可访问 + 完整 Next.js）：**
 
 ```bash
-npx vercel@latest login
-npx vercel@latest --prod
+npx zeabur@latest login
+npx zeabur@latest deploy
 ```
 
-或推送到 GitHub 后在 [vercel.com/new](https://vercel.com/new) 导入仓库一键部署。
+**静态托管（腾讯云 / Gitee Pages）：**
 
-详细步骤见 [DEPLOY.md](./DEPLOY.md)。
+```bash
+npm run build:static
+# 将 out/ 目录上传到静态托管
+```
+
+详细步骤见 [DEPLOY-CN.md](./DEPLOY-CN.md)。
 
 ## 配置
 

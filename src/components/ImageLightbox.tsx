@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getProxiedImageUrl, isExternalImage } from "@/lib/image";
+import { getImageDisplayUrl } from "@/lib/image";
 
 type Props = {
   /** 原始图片地址 */
@@ -11,7 +11,7 @@ type Props = {
 };
 
 export function ImageLightbox({ src, alt, onClose }: Props) {
-  const displaySrc = isExternalImage(src) ? getProxiedImageUrl(src) : src;
+  const displaySrc = getImageDisplayUrl(src);
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
@@ -68,6 +68,7 @@ export function ImageLightbox({ src, alt, onClose }: Props) {
             src={displaySrc}
             alt={alt || "文章配图"}
             className="image-lightbox-img"
+            referrerPolicy="no-referrer"
             onError={() => setFailed(true)}
           />
         )}

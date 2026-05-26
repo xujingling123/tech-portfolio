@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# deploy backup
+/src/app/_api_backup_deploy
+
 # production
 /build
 

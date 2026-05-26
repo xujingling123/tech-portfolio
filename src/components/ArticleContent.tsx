@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { getProxiedImageUrl, isExternalImage } from "@/lib/image";
+import { getImageDisplayUrl, isExternalImage } from "@/lib/image";
 import { ImageLightbox } from "./ImageLightbox";
 
 type LightboxState = { src: string; alt: string } | null;
@@ -92,7 +92,7 @@ function markZoomableImages(articleRoot: HTMLElement) {
     const raw = img.getAttribute("src");
     if (raw && isExternalImage(raw)) {
       img.dataset.originalSrc = raw;
-      img.src = getProxiedImageUrl(raw);
+      img.src = getImageDisplayUrl(raw);
     }
 
     if (!img.alt) img.alt = "文章配图";
