@@ -1,37 +1,23 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { HeaderNav } from "./HeaderNav";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b0f19]/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="group flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400 text-sm font-bold text-white">
-            J
-          </span>
-          <span className="font-semibold tracking-tight text-white group-hover:text-cyan-300 transition-colors">
-            {siteConfig.name}
-          </span>
+    <header className="site-header">
+      <div className="site-container flex h-[4.25rem] items-center justify-between gap-4">
+        <Link href="/" className="group flex min-w-0 items-center gap-3">
+          <span className="logo-badge">J</span>
+          <div className="hidden sm:block">
+            <span className="logo-text block truncate">{siteConfig.name}</span>
+            <span className="logo-subtext block">技术博客</span>
+          </div>
         </Link>
-        <nav className="flex items-center gap-1">
-          {siteConfig.nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-lg px-4 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <a
-            href={siteConfig.csdnUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-2 rounded-lg border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:border-cyan-500/50 hover:text-cyan-300"
-          >
-            CSDN
-          </a>
-        </nav>
+        <div className="flex items-center gap-2">
+          <HeaderNav />
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

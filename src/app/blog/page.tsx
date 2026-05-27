@@ -1,4 +1,5 @@
 import { PostCard } from "@/components/PostCard";
+import { PageHeader } from "@/components/PageHeader";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata = {
@@ -9,21 +10,20 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12">
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold text-white">技术博客</h1>
-        <p className="mt-2 text-slate-400">
-          从 CSDN 迁移的原创技术文章，共 {posts.length} 篇
-        </p>
-      </div>
+    <div className="site-container py-12 md:py-16">
+      <PageHeader
+        label="Blog"
+        title="技术博客"
+        description={`从 CSDN 迁移的原创技术文章，共 ${posts.length} 篇，涵盖前端、地图 GIS、移动端与架构等主题。`}
+      />
       {posts.length > 0 ? (
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2">
           {posts.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}
         </div>
       ) : (
-        <p className="text-slate-500">暂无文章。</p>
+        <p className="glass-card p-10 text-center text-muted">暂无文章。</p>
       )}
     </div>
   );
