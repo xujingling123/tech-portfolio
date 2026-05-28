@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { SiteLogoBadge } from "@/components/SiteLogo";
 
 export function Footer() {
   return (
@@ -8,7 +9,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3">
-              <span className="logo-badge text-sm">J</span>
+              <SiteLogoBadge size="sm" />
               <span className="font-semibold text-heading">{siteConfig.author}</span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">

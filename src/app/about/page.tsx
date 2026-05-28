@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
+import { SiteLogoBadge } from "@/components/SiteLogo";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
@@ -13,7 +14,7 @@ export default function AboutPage() {
 
       <div className="glass-card p-8 md:p-10">
         <div className="flex flex-col items-center gap-6 border-b border-section pb-8 text-center sm:flex-row sm:text-left">
-          <span className="logo-badge h-16 w-16 text-2xl">J</span>
+          <SiteLogoBadge size="lg" />
           <div>
             <h2 className="text-xl font-bold text-heading">{siteConfig.author}</h2>
             <p className="mt-1 text-sm text-muted">全栈 · 地图 GIS · 跨端开发</p>
