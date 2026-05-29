@@ -11,7 +11,7 @@ export type ToolItem = {
 export const toolsConfig = {
   title: "在线工具",
   description:
-    "实用小工具集合：地图经纬度定位、声音复刻合成、一键抠图等，可在浏览器中直接使用。",
+    "实用小工具集合：地图定位、Three.js 画板、声音复刻、一键抠图等，可在浏览器中直接使用。",
   items: [
     {
       slug: "map",
@@ -22,6 +22,15 @@ export const toolsConfig = {
       href: "/tools/map",
       tags: ["Mapbox", "GIS", "经纬度"],
       requiresEnv: ["NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN"],
+    },
+    {
+      slug: "three-draw",
+      title: "Three.js 画板",
+      description:
+        "在 3D 画板上绘制线条，切换视角、调整笔刷与背景，一键导出 PNG 图片。",
+      icon: "✎",
+      href: "/tools/three-draw",
+      tags: ["Three.js", "WebGL", "绘画"],
     },
     {
       slug: "voice-clone",
@@ -41,6 +50,16 @@ export const toolsConfig = {
       href: "/tools/rembg",
       tags: ["rembg", "抠图", "背景移除"],
       requiresEnv: ["REMBG_SERVER_URL"],
+    },
+    {
+      slug: "assistant",
+      title: "AI 助手（DeerFlow）",
+      description:
+        "对接本地 DeerFlow Super Agent：流式对话、可选计划模式；需单独启动 DeerFlow 服务。",
+      icon: "◇",
+      href: "/tools/assistant",
+      tags: ["DeerFlow", "Agent", "LangGraph"],
+      requiresEnv: ["DEERFLOW_GATEWAY_URL"],
     },
   ] satisfies ToolItem[],
 } as const;

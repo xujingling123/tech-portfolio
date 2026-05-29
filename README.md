@@ -7,6 +7,7 @@
 - 首页：技术栈展示 + 最新文章
 - 博客列表与文章详情（Markdown）
 - 关于页
+- 在线工具（地图、声音复刻、抠图、[DeerFlow AI 助手](./INTEGRATION-DEERFLOW.md)）
 - CSDN 批量迁移脚本
 
 ## 开发
@@ -64,3 +65,5 @@ npm run build:static
 ## 配置
 
 编辑 `src/config/site.ts` 修改站点名称、技能栈、外链等。
+
+DeerFlow 集成见 [INTEGRATION-DEERFLOW.md](./INTEGRATION-DEERFLOW.md)。

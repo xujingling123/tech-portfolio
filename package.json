@@ -30,6 +30,7 @@
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
     "remark-rehype": "^11.1.2",
+    "three": "^0.184.0",
     "turndown": "^7.2.4"
   },
   "devDependencies": {
@@ -37,6 +38,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.184.1",
     "@types/turndown": "^5.0.6",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
